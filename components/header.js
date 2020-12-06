@@ -22,11 +22,17 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 20,
+        zIndex:1,
+        marginBottom:-70,
+        
     },
     logo: {
-        width: 100,
-        height: 100,
+        width: 200,
+        height: 150,
+        marginTop:100,
+        zIndex:1,
+        marginBottom:-225,
     },
 
 });

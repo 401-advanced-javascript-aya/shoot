@@ -3,17 +3,29 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './components/header'
 import Main from './components/main'
-import ImgUpload from './image-upload-example/mobile/App'
+import ImgUpload from './components/imgUpload'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function App() {
+  const Stack = createStackNavigator();
+
   return (
     <>
-    <Header />
-    <Main />
-    <View style={styles.container}>
+ 
+    <NavigationContainer>
+    {/* <Header /> */}
+      <Stack.Navigator>
+        <Stack.Screen name="Home " component={Main} />
+        <Stack.Screen name="Proof" component={ImgUpload} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    {/* <Main /> */}
+    {/* <View style={styles.container}>
       <StatusBar style="auto" />
-    </View>
-    <ImgUpload />
+    </View> */}
+   
+    {/* <ImgUpload /> */}
     </>
   );
 }
@@ -21,7 +33,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
