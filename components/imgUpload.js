@@ -30,17 +30,16 @@ const Header = () => {
   //   await hitingRef
   //     .get()
   //     .then(function (doc) {
-  //       // console.log('kkkkkkkk', doc);
   //       if (doc.exists) {
-  //         console.log('Document data:', doc.data().BoysCount);
+  //
   //         doc.data();
   //       } else {
   //         // doc.data() will be undefined in this case
-  //         console.log('No such document!');
+  //
   //       }
   //     })
   //     .catch(function (error) {
-  //       console.log('Error getting document:', error);
+  //
   //     });
   // }
   // const { item } = route.params;
@@ -54,21 +53,20 @@ const Header = () => {
   const shootRef = firebase.firestore().collection('shoot');
   const storageRef = firebase.storage().ref();
   // getData();
-  // console.log('maleeeeeeeeeeeeeeeeeeeeeek', shootRef);
+  //
   async function getData() {
     await shootRef.get().then((snapshot) => {
       snapshot.forEach((doc) => {
         const data = doc.data();
-        // console.log('data??', data);
+        //
         posts.push({ id: doc.id, ...data });
         setPost(posts);
-        // console.log(posts, 'asssa');
+        //
       });
     });
   }
 
   async function deleteHandler(id) {
-    console.log('item', id);
     shootRef
       .doc(id)
       .delete()
@@ -78,12 +76,12 @@ const Header = () => {
       .catch((error) => console.error('Error While Removing', error));
   }
   const updateHandler = () => {
-    // console.log('ahahahaha');
+    //
     uriToBlob(image)
       .then((blob) => uploadToFirebase(blob))
       .then((url) => {
         // const url = `${snapshot.metadata.bucket}/${snapshot.metadata.fullPath}`;
-        // console.log('URLLLLLLL', url, value);
+        //
         shootRef
           .add({
             comment: value,
@@ -120,7 +118,7 @@ const Header = () => {
   };
   const uploadToFirebase = async (blob) => {
     return await new Promise((resolve, reject) => {
-      // console.log('blob', blob, 'blob');
+      //
       // var storageRef = firebase.storage().ref();
       storageRef
         .child(`shoot/${value}.jpg`)
@@ -148,8 +146,6 @@ const Header = () => {
         aspect: [4, 3],
         quality: 1,
       });
-
-      console.log(result);
 
       if (!result.cancelled) {
         setImage(result.uri);
@@ -239,7 +235,7 @@ const Header = () => {
         <FlatList
           data={post}
           renderItem={({ item }) => {
-            // console.log(item.comment, 'ajajsj');
+            //
             return (
               <View style={styles.renderContainer}>
                 <Image style={styles.listImage} source={{ uri: item.image }} />

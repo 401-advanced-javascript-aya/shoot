@@ -24,17 +24,17 @@ const shootRef = firebase
 //   await shootRef
 //     .get()
 //     .then(function (doc) {
-//       // console.log('kkkkkkkk', doc);
+//       //
 //       if (doc.exists) {
-//         console.log('Document data:', doc.data().BoysCount);
+//
 //         // countObject = doc.data();
 //       } else {
 //         // doc.data() will be undefined in this case
-//         console.log('No such document!');
+//
 //       }
 //     })
 //     .catch(function (error) {
-//       console.log('Error getting document:', error);
+//
 //     });
 // }
 const Header = (item) => {
@@ -46,14 +46,12 @@ const Header = (item) => {
     await shootRef
       .get()
       .then(function (doc) {
-        // console.log('kkkkkkkk', doc);
+        //
         if (doc.exists) {
-          console.log('Document data:', doc.data().BoysCount);
           setCountBoys(doc.data().BoysCount);
           setCountGirls(doc.data().girlsCount);
         } else {
           // doc.data() will be undefined in this case
-          console.log('No such document!');
         }
       })
       .catch(function (error) {

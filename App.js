@@ -1,14 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, LogBox, Text, View } from 'react-native';
 import Header from './components/header';
 import Main from './components/main';
 import ImgUpload from './components/imgUpload';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+// import { LogBox } from 'react-native';
 export default function App() {
   const Stack = createStackNavigator();
+  LogBox.ignoreLogs(['Setting a timer']);
 
   return (
     <>
