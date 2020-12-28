@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/header'
-import Main from './components/main'
-import ImgUpload from './components/imgUpload'
+import Header from './components/header';
+import Main from './components/main';
+import ImgUpload from './components/imgUpload';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -12,20 +12,19 @@ export default function App() {
 
   return (
     <>
- 
-    <NavigationContainer>
-    {/* <Header /> */}
-      <Stack.Navigator>
-        <Stack.Screen name="Home " component={Main} />
-        <Stack.Screen name="Proof" component={ImgUpload} />
-      </Stack.Navigator>
-    </NavigationContainer>
-    {/* <Main /> */}
-    {/* <View style={styles.container}>
+      <NavigationContainer>
+        {/* <Header /> */}
+        <Stack.Navigator>
+          <Stack.Screen name="Home " component={Main} />
+          <Stack.Screen name="Proof" component={ImgUpload} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      {/* <Main /> */}
+      {/* <View style={styles.container}>
       <StatusBar style="auto" />
     </View> */}
-   
-    {/* <ImgUpload /> */}
+
+      {/* <ImgUpload /> */}
     </>
   );
 }
