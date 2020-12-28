@@ -10,7 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 export default function App() {
   const Stack = createStackNavigator();
   LogBox.ignoreLogs(['Setting a timer']);
-
+  // this is comment
   return (
     <>
       <NavigationContainer>
